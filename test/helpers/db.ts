@@ -58,15 +58,22 @@ export default migration({
 `
 }
 
+/** The runtime model options these tests use. */
+interface ModelOptions {
+  readonly fillable?: readonly string[]
+  readonly allowSensitive?: readonly string[]
+  readonly hidden?: readonly string[]
+}
+
 /** The test app's models (what `class Contact extends Model('contacts', …)` is at runtime). */
 export class Company extends ModelBase {
   static override readonly table: string = 'companies'
-  static override readonly options = { fillable: ['name'] }
+  static override readonly options: ModelOptions = { fillable: ['name'] }
 }
 
 export class Contact extends ModelBase {
   static override readonly table: string = 'contacts'
-  static override readonly options = {
+  static override readonly options: ModelOptions = {
     fillable: [
       'name',
       'email',
