@@ -1,0 +1,8 @@
+{
+  "mode": "pre",
+  "tag": "next",
+  "initialVersions": {
+    "@strutvane/import-export": "0.1.0"
+  },
+  "changesets": []
+}
